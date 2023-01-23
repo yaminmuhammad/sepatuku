@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:sepatuku/pages/home/chat_page.dart';
 import 'package:sepatuku/pages/home/home_page.dart';
 import 'package:sepatuku/pages/home/profile.dart';
