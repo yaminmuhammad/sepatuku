@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sepatuku/theme.dart';
 import 'package:sepatuku/widgets/product_card.dart';
+import 'package:sepatuku/widgets/product_tile.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -225,6 +226,39 @@ class HomePage extends StatelessWidget {
       );
     }
 
+    Widget newArrivalsTitle() {
+      return Container(
+        margin: EdgeInsets.only(
+          top: defaultMargin,
+          left: defaultMargin,
+          right: defaultMargin,
+        ),
+        child: Text(
+          'Popular Products',
+          style: primaryTextStyle.copyWith(
+            fontSize: 22,
+            fontWeight: semiBold,
+          ),
+        ),
+      );
+    }
+
+    Widget newArrivals() {
+      return Container(
+        margin: EdgeInsets.only(
+          top: 14,
+        ),
+        child: Column(
+          children: [
+            ProductTile(),
+            ProductTile(),
+            ProductTile(),
+            ProductTile(),
+          ],
+        ),
+      );
+    }
+
     return Container(
       child: ListView(
         children: [
@@ -232,6 +266,8 @@ class HomePage extends StatelessWidget {
           Categories(),
           popularProductsTitle(),
           popularProducts(),
+          newArrivalsTitle(),
+          newArrivals(),
         ],
       ),
     );
