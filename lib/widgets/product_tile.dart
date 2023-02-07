@@ -52,7 +52,7 @@ class ProductTile extends StatelessWidget {
                   style: priceTextStyle.copyWith(
                     fontWeight: semiBold,
                   ),
-                )
+                ),
               ],
             ),
           ),
