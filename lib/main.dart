@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sepatuku/pages/detail_chat_page.dart';
 import 'package:sepatuku/pages/home/main_page.dart';
 import 'package:sepatuku/pages/sign_in_page.dart';
 import 'package:sepatuku/pages/sign_up_page.dart';
@@ -18,6 +19,7 @@ class MyApp extends StatelessWidget {
         '/sign-in': (context) => SignInPage(),
         '/sign-up': (context) => SignUpPage(),
         '/home': (context) => Main_Page(),
+        '/detail-chat': (context) => DetailChatPage(),
       },
     );
   }
