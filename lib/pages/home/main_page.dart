@@ -20,7 +20,9 @@ class _Main_PageState extends State<Main_Page> {
     Widget cartButton() {
       return FloatingActionButton(
         backgroundColor: secondaryColor,
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(context, '/cart');
+        },
         child: Image.asset(
           'assets/icon_cart.png',
           width: 20,
