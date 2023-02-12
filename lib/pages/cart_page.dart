@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sepatuku/theme.dart';
+import 'package:sepatuku/widgets/cart_card.dart';
 
 class CartPage extends StatelessWidget {
   const CartPage({super.key});
@@ -78,10 +79,22 @@ class CartPage extends StatelessWidget {
       );
     }
 
+    Widget content() {
+      return ListView(
+        padding: EdgeInsets.symmetric(
+          horizontal: defaultMargin,
+        ),
+        children: [
+          CartCard(),
+        ],
+      );
+    }
+
     return Scaffold(
       backgroundColor: backgroundColor3,
       appBar: header(),
-      body: emptyCart(),
+      // body: emptyCart(),
+      body: content(),
     );
   }
 }

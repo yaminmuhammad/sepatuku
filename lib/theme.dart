@@ -23,6 +23,10 @@ TextStyle primaryTextStyle = GoogleFonts.poppins(
   color: primaryTextColor,
 );
 
+TextStyle alertTextStyle = GoogleFonts.poppins(
+  color: alertColor,
+);
+
 TextStyle secondaryTextStyle = GoogleFonts.poppins(
   color: secondaryTextColor,
 );
