@@ -3,8 +3,6 @@ import 'package:sepatuku/theme.dart';
 import 'package:sepatuku/widgets/wishlist_card.dart';
 
 class WishListPage extends StatelessWidget {
-  const WishListPage({super.key});
-
   @override
   Widget build(BuildContext context) {
     Widget header() {

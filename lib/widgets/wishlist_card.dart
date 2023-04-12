@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:sepatuku/theme.dart';
 
 class WishlistCard extends StatelessWidget {
-  const WishlistCard({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Container(

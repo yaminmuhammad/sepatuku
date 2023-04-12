@@ -4,8 +4,6 @@ import 'package:sepatuku/widgets/product_card.dart';
 import 'package:sepatuku/widgets/product_tile.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
-
   @override
   Widget build(BuildContext context) {
     Widget Header() {

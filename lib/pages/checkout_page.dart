@@ -3,8 +3,6 @@ import 'package:sepatuku/theme.dart';
 import 'package:sepatuku/widgets/checkout_card.dart';
 
 class CheckoutPage extends StatelessWidget {
-  const CheckoutPage({super.key});
-
   @override
   Widget build(BuildContext context) {
     header() {

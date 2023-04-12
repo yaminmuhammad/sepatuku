@@ -3,8 +3,6 @@ import 'package:sepatuku/theme.dart';
 import 'package:sepatuku/widgets/chat_bubble.dart';
 
 class DetailChatPage extends StatelessWidget {
-  const DetailChatPage({super.key});
-
   @override
   Widget build(BuildContext context) {
     header() {

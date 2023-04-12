@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:sepatuku/theme.dart';
 
 class CheckoutSuccessPage extends StatelessWidget {
-  const CheckoutSuccessPage({super.key});
-
   @override
   Widget build(BuildContext context) {
     header() {

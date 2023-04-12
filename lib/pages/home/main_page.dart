@@ -6,8 +6,6 @@ import 'package:sepatuku/pages/home/wishlist_page.dart';
 import 'package:sepatuku/theme.dart';
 
 class Main_Page extends StatefulWidget {
-  const Main_Page({super.key});
-
   @override
   State<Main_Page> createState() => _Main_PageState();
 }

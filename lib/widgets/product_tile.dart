@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:sepatuku/theme.dart';
 
 class ProductTile extends StatelessWidget {
-  const ProductTile({super.key});
-
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
