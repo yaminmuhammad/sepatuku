@@ -4,7 +4,7 @@ import 'package:sepatuku/model/user_model.dart';
 import 'package:http/http.dart' as http;
 
 class AuthService {
-  String baseUrl = "http://127.0.0.1:8000/api";
+  String baseUrl = "http://localhost:8000/api";
 
   Future<UserModel> register({
     String name,
@@ -24,10 +24,12 @@ class AuthService {
     });
 
     var response = await http.post(
-      Uri.parse(url),
+      url,
       headers: headers,
       body: body,
     );
+
+    print(response.body);
 
     if (response.statusCode == 200) {
       var data = jsonDecode(response.body)['data'];
