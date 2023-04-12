@@ -3,17 +3,34 @@ import 'package:provider/provider.dart';
 import 'package:sepatuku/providers/auth_provider.dart';
 import 'package:sepatuku/theme.dart';
 
-class SignUpPage extends StatelessWidget {
+import '../widgets/loading_button.dart';
+
+class SignUpPage extends StatefulWidget {
+  @override
+  State<SignUpPage> createState() => _SignUpPageState();
+}
+
+class _SignUpPageState extends State<SignUpPage> {
   TextEditingController nameController = TextEditingController(text: '');
+
   TextEditingController usernameController = TextEditingController(text: '');
+
   TextEditingController emailController = TextEditingController(text: '');
+
   TextEditingController passwordController = TextEditingController(text: '');
+
+  bool isLoading = false;
+
   // const SignInPage({super.key});
   @override
   Widget build(BuildContext context) {
     AuthProvider authProvider = Provider.of<AuthProvider>(context);
 
     handleSignUp() async {
+      setState(() {
+        isLoading = true;
+      });
+
       if (await authProvider.register(
         name: nameController.text,
         username: usernameController.text,
@@ -21,7 +38,20 @@ class SignUpPage extends StatelessWidget {
         password: passwordController.text,
       )) {
         Navigator.pushNamed(context, '/home');
+      } else {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            backgroundColor: alertColor,
+            content: Text(
+              'Gagal Register!',
+              textAlign: TextAlign.center,
+            ),
+          ),
+        );
       }
+      setState(() {
+        isLoading = false;
+      });
     }
 
     Widget Header() {
@@ -331,9 +361,9 @@ class SignUpPage extends StatelessWidget {
               usernameInput(),
               emailInput(),
               passwordInput(),
-              signUpButton(),
+              isLoading ? LoadingButton() : signUpButton(),
               Spacer(),
-              // footer(),
+              footer(),
             ],
           ),
         ),
