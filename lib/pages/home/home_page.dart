@@ -10,9 +10,9 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     AuthProvider authProvider = Provider.of<AuthProvider>(context);
-
     UserModel user = authProvider.user;
-    Widget Header() {
+
+    Widget header() {
       return Container(
         margin: EdgeInsets.only(
           top: defaultMargin,
@@ -58,7 +58,7 @@ class HomePage extends StatelessWidget {
       );
     }
 
-    Widget Categories() {
+    Widget categories() {
       return Container(
         margin: EdgeInsets.only(
           top: defaultMargin,
@@ -266,8 +266,8 @@ class HomePage extends StatelessWidget {
     return Container(
       child: ListView(
         children: [
-          Header(),
-          Categories(),
+          header(),
+          categories(),
           popularProductsTitle(),
           popularProducts(),
           newArrivalsTitle(),

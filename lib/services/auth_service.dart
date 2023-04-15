@@ -25,7 +25,7 @@ class AuthService {
     });
 
     var response = await http.post(
-      url,
+      Uri.parse(url),
       headers: headers,
       body: body,
     );

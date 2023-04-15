@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sepatuku/pages/home/chat_page.dart';
 import 'package:sepatuku/pages/home/home_page.dart';
-import 'package:sepatuku/pages/home/profile.dart';
+import 'package:sepatuku/pages/home/profile_page.dart';
 import 'package:sepatuku/pages/home/wishlist_page.dart';
 import 'package:sepatuku/theme.dart';
 

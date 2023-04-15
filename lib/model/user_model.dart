@@ -8,13 +8,14 @@ class UserModel {
   String profilePhotoUrl;
   String token;
 
-  UserModel(
-      {this.id,
-      this.name,
-      this.email,
-      this.username,
-      this.profilePhotoUrl,
-      this.token});
+  UserModel({
+    this.id,
+    this.name,
+    this.email,
+    this.username,
+    this.profilePhotoUrl,
+    this.token,
+  });
 
   UserModel.fromJson(Map<String, dynamic> json) {
     id = json['id'];
