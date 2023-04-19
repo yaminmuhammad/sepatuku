@@ -37,7 +37,6 @@ class MyApp extends StatelessWidget {
           '/home': (context) => Main_Page(),
           '/detail-chat': (context) => DetailChatPage(),
           '/edit-profile': (context) => EditProfilePage(),
-          '/product': (context) => ProductPage(),
           '/cart': (context) => CartPage(),
           '/checkout': (context) => CheckoutPage(),
           '/checkout-success': (context) => CheckoutSuccessPage(),

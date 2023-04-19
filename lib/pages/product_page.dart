@@ -1,8 +1,12 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:sepatuku/model/product_model.dart';
 import 'package:sepatuku/theme.dart';
 
 class ProductPage extends StatefulWidget {
+  final ProductModel product;
+  ProductPage(this.product);
+
   @override
   State<ProductPage> createState() => _ProductPageState();
 }
@@ -167,9 +171,9 @@ class _ProductPageState extends State<ProductPage> {
             ),
           ),
           CarouselSlider(
-            items: images
-                .map((image) => Image.asset(
-                      image,
+            items: widget.product.galleries
+                .map((image) => Image.network(
+                      image.url,
                       width: MediaQuery.of(context).size.width,
                       height: 310,
                       fit: BoxFit.cover,
@@ -189,7 +193,7 @@ class _ProductPageState extends State<ProductPage> {
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: images.map((image) {
+            children: widget.product.galleries.map((image) {
               index++;
               return indicator(index);
             }).toList(),
@@ -227,14 +231,14 @@ class _ProductPageState extends State<ProductPage> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Terrex Urban Low',
+                          widget.product.name,
                           style: primaryTextStyle.copyWith(
                             fontSize: 18,
                             fontWeight: semiBold,
                           ),
                         ),
                         Text(
-                          'Hiking',
+                          widget.product.category.name,
                           style: secondaryTextStyle,
                         ),
                       ],
@@ -300,7 +304,7 @@ class _ProductPageState extends State<ProductPage> {
                     style: primaryTextStyle,
                   ),
                   Text(
-                    '\$143,98',
+                    '\$${widget.product.price}',
                     style: priceTextStyle.copyWith(
                       fontSize: 16,
                       fontWeight: semiBold,
@@ -329,7 +333,7 @@ class _ProductPageState extends State<ProductPage> {
                     height: 12,
                   ),
                   Text(
-                    'Unpaved trails and mixed surfaces are easy when you have the traction and support you need. Casual enough for the daily commute.',
+                    widget.product.description,
                     style: subtitleTextStyle.copyWith(
                       fontWeight: light,
                     ),
