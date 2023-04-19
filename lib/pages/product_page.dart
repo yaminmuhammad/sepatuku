@@ -1,6 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:sepatuku/model/product_model.dart';
+import 'package:sepatuku/providers/wishlist_provider.dart';
 import 'package:sepatuku/theme.dart';
 
 class ProductPage extends StatefulWidget {
@@ -13,7 +15,6 @@ class ProductPage extends StatefulWidget {
 
 class _ProductPageState extends State<ProductPage> {
   int currentIndex = 0;
-  bool isWishlist = false;
 
   @override
   Widget build(BuildContext context) {
@@ -35,6 +36,8 @@ class _ProductPageState extends State<ProductPage> {
       'assets/image_shoes.png',
       'assets/image_shoes.png',
     ];
+
+    WishListProvider wishListProvider = Provider.of<WishListProvider>(context);
 
     Future<void> showSuccessDialog() async {
       return showDialog(
@@ -246,10 +249,9 @@ class _ProductPageState extends State<ProductPage> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      setState(() {
-                        isWishlist = !isWishlist;
-                      });
-                      if (isWishlist) {
+                      wishListProvider.setProduct(widget.product);
+
+                      if (wishListProvider.isWishList(widget.product)) {
                         ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(
                             backgroundColor: secondaryColor,
@@ -272,7 +274,7 @@ class _ProductPageState extends State<ProductPage> {
                       }
                     },
                     child: Image.asset(
-                      isWishlist
+                      wishListProvider.isWishList(widget.product)
                           ? 'assets/button_wishlist_blue.png'
                           : 'assets/button_wishlist.png',
                       width: 46,
