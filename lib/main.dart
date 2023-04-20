@@ -13,6 +13,7 @@ import 'package:sepatuku/pages/splash_pages.dart';
 import 'package:sepatuku/providers/auth_provider.dart';
 import 'package:sepatuku/providers/cart_provider.dart';
 import 'package:sepatuku/providers/product_provider.dart';
+import 'package:sepatuku/providers/transaction_provider.dart';
 import 'package:sepatuku/providers/wishlist_provider.dart';
 
 void main() => runApp(MyApp());
@@ -34,6 +35,9 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (context) => CartProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => TransactionProvider(),
         ),
       ],
       child: MaterialApp(
