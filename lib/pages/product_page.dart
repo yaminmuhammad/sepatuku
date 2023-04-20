@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sepatuku/model/product_model.dart';
+import 'package:sepatuku/providers/cart_provider.dart';
 import 'package:sepatuku/providers/wishlist_provider.dart';
 import 'package:sepatuku/theme.dart';
 
@@ -38,6 +39,7 @@ class _ProductPageState extends State<ProductPage> {
     ];
 
     WishListProvider wishListProvider = Provider.of<WishListProvider>(context);
+    CartProvider cartProvider = Provider.of<CartProvider>(context);
 
     Future<void> showSuccessDialog() async {
       return showDialog(
@@ -98,7 +100,9 @@ class _ProductPageState extends State<ProductPage> {
                           borderRadius: BorderRadius.circular(12),
                         ),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/cart');
+                      },
                       child: Text(
                         'View My Cart',
                         style: primaryTextStyle.copyWith(
@@ -416,6 +420,7 @@ class _ProductPageState extends State<ProductPage> {
                           ),
                         ),
                         onPressed: () {
+                          cartProvider.addCart(widget.product);
                           showSuccessDialog();
                         },
                         child: Text(

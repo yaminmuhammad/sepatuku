@@ -18,11 +18,13 @@ class CartProvider with ChangeNotifier {
           _carts.indexWhere((element) => element.product.id == product.id);
       _carts[index].quantity++;
     } else {
-      _carts.add(CartModel(
-        id: _carts.length + 1,
-        product: product,
-        quantity: 1,
-      ));
+      _carts.add(
+        CartModel(
+          id: _carts.length,
+          product: product,
+          quantity: 1,
+        ),
+      );
     }
     notifyListeners();
   }

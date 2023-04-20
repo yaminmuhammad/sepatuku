@@ -11,6 +11,7 @@ import 'package:sepatuku/pages/sign_in_page.dart';
 import 'package:sepatuku/pages/sign_up_page.dart';
 import 'package:sepatuku/pages/splash_pages.dart';
 import 'package:sepatuku/providers/auth_provider.dart';
+import 'package:sepatuku/providers/cart_provider.dart';
 import 'package:sepatuku/providers/product_provider.dart';
 import 'package:sepatuku/providers/wishlist_provider.dart';
 
@@ -30,6 +31,9 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (context) => WishListProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => CartProvider(),
         ),
       ],
       child: MaterialApp(
